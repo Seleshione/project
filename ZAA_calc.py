@@ -15,7 +15,6 @@ def trig_test(x, function_type):
     :returns: Значение тригонометрической функции.
     :rtype: float
     :raises ZeroDivisionError: Если тангенс или котангенс не определены.
-    :raises ValueError: Если указан неизвестный тип тригонометрической функции.
     """
     x = x / 180 * 3.1415
     q = x
@@ -48,11 +47,11 @@ def convert_test(num, base):
 
     :param num: Число для преобразования.
     :type num: int
-    :param base: Основание системы счисления (от 2 до 36).
+    :param base: Основание системы счисления 
     :type base: int
     :returns: Строка, представляющая число в заданной системе счисления.
     :rtype: str
-    :raises ValueError: Если основание системы счисления не в диапазоне от 2 до 36.
+    :raises ValueError: Если число для конвертации отрицательное
     """
     if num == 0:
         return "0"
