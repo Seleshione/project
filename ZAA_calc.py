@@ -5,6 +5,18 @@ import sys
 
 
 def trig_test(x, function_type):
+    """
+    Вычисляет значение тригонометрической функции для заданного угла.
+
+    :param x: Угол в градусах.
+    :type x: float
+    :param function_type: Тип тригонометрической функции ('sin', 'cos', 'tg', 'ctg').
+    :type function_type: str
+    :returns: Значение тригонометрической функции.
+    :rtype: float
+    :raises ZeroDivisionError: Если тангенс или котангенс не определены.
+    :raises ValueError: Если указан неизвестный тип тригонометрической функции.
+    """
     x = x / 180 * 3.1415
     q = x
     s = 0
@@ -31,6 +43,17 @@ def trig_test(x, function_type):
 
 
 def convert_test(num, base):
+    """
+    Преобразует число в строку, представляющую его в заданной системе счисления.
+
+    :param num: Число для преобразования.
+    :type num: int
+    :param base: Основание системы счисления (от 2 до 36).
+    :type base: int
+    :returns: Строка, представляющая число в заданной системе счисления.
+    :rtype: str
+    :raises ValueError: Если основание системы счисления не в диапазоне от 2 до 36.
+    """
     if num == 0:
         return "0"
     if num < 0:
@@ -45,6 +68,15 @@ def convert_test(num, base):
 
 
 def factorial_test(x):
+    """
+    Вычисляет факториал заданного неотрицательного целого числа.
+
+    :param x: Целое неотрицательное число, для которого нужно вычислить факториал.
+    :type x: int
+    :returns: Факториал числа x.
+    :rtype: int
+    :raises ValueError: Если x не является неотрицательным целым числом.
+    """
     if not isinstance(x, int):
         raise ValueError
     if x < 0:
@@ -56,6 +88,15 @@ def factorial_test(x):
 
 
 def evaluate_expression_test(expression):
+    """
+    Оценивает арифметическое выражение и возвращает результат.
+
+    :param expression: Арифметическое выражение в виде строки.
+    :type expression: str
+    :returns: Результат вычисления выражения.
+    :rtype: float
+    :raises ZeroDivisionError: Если в выражении происходит деление на ноль.
+    """
     try:
         result = eval(expression)
         return result
@@ -64,6 +105,18 @@ def evaluate_expression_test(expression):
 
 
 def process_key(key, entry_text):
+    """
+    Обрабатывает нажатие клавиши и возвращает новый текст для ввода.
+
+    :param key: Нажатая клавиша.
+    :type key: str
+    :param entry_text: Текущий текст в поле ввода.
+    :type entry_text: str
+    :param abs_value: Абсолютное значение (по умолчанию 0).
+    :type abs_value: float
+    :returns: Новый текст для ввода и абсолютное значение.
+    :rtype: str
+    """
     try:
         if key == "=":
             str_1 = "0123456789*)(/."
@@ -100,6 +153,12 @@ def process_key(key, entry_text):
 
 
 def calc(key):
+    """
+    Обрабатывает нажатие клавиши калькулятора и обновляет текст в поле ввода.
+
+    :param key: Нажатая клавиша.
+    :type key: str
+    """
     entry_text = calc_entry.get()
     new_text = process_key(key, entry_text)
     calc_entry.delete(0, END)
