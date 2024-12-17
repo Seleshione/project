@@ -111,9 +111,7 @@ def process_key(key, entry_text):
     :type key: str
     :param entry_text: Текущий текст в поле ввода.
     :type entry_text: str
-    :param abs_value: Абсолютное значение (по умолчанию 0).
-    :type abs_value: float
-    :returns: Новый текст для ввода и абсолютное значение.
+    :returns: Новый текст для ввода.
     :rtype: str
     """
     try:
